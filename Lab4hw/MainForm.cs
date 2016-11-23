@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -92,13 +93,14 @@ namespace Lab4hw
             foreach (var asyncRes in asyncResults.ToArray())
                 results.Add(dlg.EndInvoke(asyncRes));
 
-            label1.Text = "Done!";
+            statusLabel.Text = "Done!";
             PrintXml();
+            
         }
 
         private void UpdateProgressBar(WordCounter wordCounter)
         {
-            label1.Text = "Done with " + wordCounter.Url + "!";
+            statusLabel.Text = "Done with " + wordCounter.Url + "!";
             progressBar1.PerformStep();
             websitesDataGridView.Refresh();
         }
@@ -107,12 +109,17 @@ namespace Lab4hw
 
         private WordCounter Work(WordCounter wc)
         {
-            DateTime startTime = DateTime.Now;
+            //DateTime startTime = DateTime.Now;
+            Stopwatch stopWatch = Stopwatch.StartNew();
             wc.Compute();
-            DateTime endTime = DateTime.Now;
+            //DateTime endTime = DateTime.Now;
+            TimeSpan ts = stopWatch.Elapsed;
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds);
 
-            TimeSpan ts = endTime - startTime;
-            wc.Duration = ts.Seconds;
+            //TimeSpan ts = endTime - startTime;
+            wc.Duration = elapsedTime;
 
             UpdateProgressBar(wc);
 
@@ -141,6 +148,7 @@ namespace Lab4hw
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
             }
+            //statusLabel.Text = "Done with xml!";
         }
 
     }

@@ -33,7 +33,7 @@
             this.stopButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.websitesDataGridView = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.addWebButton = new System.Windows.Forms.Button();
             this.webTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.websitesDataGridView)).BeginInit();
@@ -96,16 +96,16 @@
             this.websitesDataGridView.Size = new System.Drawing.Size(999, 688);
             this.websitesDataGridView.TabIndex = 4;
             // 
-            // label1
+            // statusLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 864);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Status";
+            this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(16, 864);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(73, 25);
+            this.statusLabel.TabIndex = 5;
+            this.statusLabel.Text = "Status";
             // 
             // addWebButton
             // 
@@ -136,7 +136,7 @@
             this.ClientSize = new System.Drawing.Size(1072, 941);
             this.Controls.Add(this.webTextBox);
             this.Controls.Add(this.addWebButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.websitesDataGridView);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.stopButton);
@@ -159,7 +159,7 @@
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.DataGridView websitesDataGridView;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Button addWebButton;
         private System.Windows.Forms.TextBox webTextBox;
     }
