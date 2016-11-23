@@ -11,16 +11,16 @@ using System.Xml;
 
 namespace Lab4hw
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private BindingSource bs;
         private int threadNo;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             threadNo = 0;
-            textBox2.Text = "http://";
+            webTextBox.Text = "http://";
 
             bs = new BindingSource();
             bs.DataSource = typeof(WordCounter);
@@ -30,15 +30,15 @@ namespace Lab4hw
             bs.Add(new WordCounter("http://www.emag.ro"));
             bs.Add(new WordCounter("http://www.pcgarage.ro"));
 
-            dataGridView1.DataSource = bs;
-            dataGridView1.AutoGenerateColumns = true;
+            websitesDataGridView.DataSource = bs;
+            websitesDataGridView.AutoGenerateColumns = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void addWebButton_Click(object sender, EventArgs e)
         {
-            String url = textBox2.Text;
+            String url = webTextBox.Text;
             checkAndAddUrl(url);
-            dataGridView1.Refresh();
+            websitesDataGridView.Refresh();
         }
 
         private void checkAndAddUrl(String url)
@@ -71,7 +71,7 @@ namespace Lab4hw
         private void startButton_Click(object sender, EventArgs e)
         {
             threadNo = bs.List.Count;
-            String word = textBox1.Text;
+            String word = wordTextBox.Text;
             progressBar1.Refresh();
             progressBar1.Step = 100/threadNo;
             
@@ -100,7 +100,7 @@ namespace Lab4hw
         {
             label1.Text = "Done with " + wordCounter.Url + "!";
             progressBar1.PerformStep();
-            dataGridView1.Refresh();
+            websitesDataGridView.Refresh();
         }
 
         public delegate WordCounter MyDelegate(WordCounter wc);
