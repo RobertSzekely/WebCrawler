@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 
@@ -30,25 +31,27 @@ namespace Lab4hw.classes
         #endregion
 
         #region private methods
-        private String GetTextFromWebsite(String url)
-        {
-            WebClient client = new WebClient();
-            String downloadString = client.DownloadString(url);
-
-            return downloadString;
-        }
 
         private void GetWordsNo(String word, String text)
         {
-            this.findings = new Regex(Regex.Escape(word)).Matches(text).Count;
+            this.findings += new Regex(Regex.Escape(word)).Matches(text).Count;
         }
 
         #endregion
 
         public void Compute()
         {
-            String text = GetTextFromWebsite(this.url);
-            GetWordsNo(this.Word, text);
+            WebClient client = new WebClient();
+            using (var stream = client.OpenRead(url))
+            using (var reader = new StreamReader(stream))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    GetWordsNo(this.Word, line);
+                }
+            }
+            
         }
 
     }

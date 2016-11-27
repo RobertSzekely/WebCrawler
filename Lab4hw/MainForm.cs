@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -102,6 +103,10 @@ namespace Lab4hw
         {
             statusLabel.Text = "Done with " + wordCounter.Url + "!";
             progressBar1.PerformStep();
+
+            progressBar1.CreateGraphics().DrawString("Done with " + wordCounter.Url + "!", new Font("Arial",
+            (float)8), Brushes.Black, new PointF(progressBar1.Width / 2 - 10, progressBar1.Height / 2 - 7));
+
             websitesDataGridView.Refresh();
         }
 

@@ -42,29 +42,26 @@
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(0, 909);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.progressBar1.Location = new System.Drawing.Point(0, 618);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1072, 32);
+            this.progressBar1.Size = new System.Drawing.Size(778, 26);
             this.progressBar1.TabIndex = 0;
             // 
             // wordTextBox
             // 
             this.wordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.wordTextBox.Location = new System.Drawing.Point(21, 30);
-            this.wordTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.wordTextBox.Location = new System.Drawing.Point(16, 24);
             this.wordTextBox.Name = "wordTextBox";
-            this.wordTextBox.Size = new System.Drawing.Size(403, 31);
+            this.wordTextBox.Size = new System.Drawing.Size(274, 26);
             this.wordTextBox.TabIndex = 1;
             // 
             // stopButton
             // 
             this.stopButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.stopButton.Location = new System.Drawing.Point(846, 25);
-            this.stopButton.Margin = new System.Windows.Forms.Padding(4);
+            this.stopButton.Location = new System.Drawing.Point(605, 20);
             this.stopButton.Name = "stopButton";
-            this.stopButton.Size = new System.Drawing.Size(164, 44);
+            this.stopButton.Size = new System.Drawing.Size(123, 35);
             this.stopButton.TabIndex = 2;
             this.stopButton.Text = "Stop";
             this.stopButton.UseVisualStyleBackColor = true;
@@ -72,10 +69,9 @@
             // startButton
             // 
             this.startButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.startButton.Location = new System.Drawing.Point(467, 25);
-            this.startButton.Margin = new System.Windows.Forms.Padding(4);
+            this.startButton.Location = new System.Drawing.Point(321, 20);
             this.startButton.Name = "startButton";
-            this.startButton.Size = new System.Drawing.Size(164, 44);
+            this.startButton.Size = new System.Drawing.Size(123, 35);
             this.startButton.TabIndex = 3;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
@@ -89,31 +85,28 @@
             this.websitesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.websitesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.websitesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.websitesDataGridView.Location = new System.Drawing.Point(24, 156);
-            this.websitesDataGridView.Margin = new System.Windows.Forms.Padding(4);
+            this.websitesDataGridView.Location = new System.Drawing.Point(18, 125);
             this.websitesDataGridView.Name = "websitesDataGridView";
             this.websitesDataGridView.RowTemplate.Height = 28;
-            this.websitesDataGridView.Size = new System.Drawing.Size(999, 688);
+            this.websitesDataGridView.Size = new System.Drawing.Size(723, 421);
             this.websitesDataGridView.TabIndex = 4;
             // 
             // statusLabel
             // 
             this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(16, 864);
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Location = new System.Drawing.Point(12, 570);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(73, 25);
+            this.statusLabel.Size = new System.Drawing.Size(56, 20);
             this.statusLabel.TabIndex = 5;
             this.statusLabel.Text = "Status";
             // 
             // addWebButton
             // 
             this.addWebButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addWebButton.Location = new System.Drawing.Point(467, 89);
-            this.addWebButton.Margin = new System.Windows.Forms.Padding(4);
+            this.addWebButton.Location = new System.Drawing.Point(321, 71);
             this.addWebButton.Name = "addWebButton";
-            this.addWebButton.Size = new System.Drawing.Size(164, 44);
+            this.addWebButton.Size = new System.Drawing.Size(123, 35);
             this.addWebButton.TabIndex = 6;
             this.addWebButton.Text = "Add website";
             this.addWebButton.UseVisualStyleBackColor = true;
@@ -123,17 +116,18 @@
             // 
             this.webTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.webTextBox.Location = new System.Drawing.Point(21, 94);
-            this.webTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.webTextBox.Location = new System.Drawing.Point(16, 75);
             this.webTextBox.Name = "webTextBox";
-            this.webTextBox.Size = new System.Drawing.Size(405, 31);
+            this.webTextBox.Size = new System.Drawing.Size(276, 26);
             this.webTextBox.TabIndex = 7;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 941);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(778, 644);
             this.Controls.Add(this.webTextBox);
             this.Controls.Add(this.addWebButton);
             this.Controls.Add(this.statusLabel);
@@ -142,8 +136,7 @@
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.wordTextBox);
             this.Controls.Add(this.progressBar1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1098, 1012);
+            this.MinimumSize = new System.Drawing.Size(800, 700);
             this.Name = "MainForm";
             this.Text = "Find Word On Websites";
             ((System.ComponentModel.ISupportInitialize)(this.websitesDataGridView)).EndInit();
