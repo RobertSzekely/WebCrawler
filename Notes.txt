@@ -1,0 +1,50 @@
+
+        TODO
+        use @ for static text (filepath) and store it in a constant
+
+        public readonly string address = @"\path"; (rootpath)
+        public string newAddress = Path.Combine(address, "output.xml")
+                                Path.Combine - safely concatenating paths
+        
+        if (File.Exists(newAddress)) 
+        {
+          //write to file
+        }
+
+
+        when opening a file, we have to do validation
+        xmlSerializaer
+        TextWriter
+        read in line, after that write in grid view and in xml file
+        Monitor for fileStream
+
+            serialiser.Serialize)Filestream, formParam.plainwebsites;
+            Filestream.Close();
+
+        
+        ListViewItem
+        WebsiteClasss website = new WebsiteClass(e.url, newaddress)
+        websites.Add(website)
+        websitesListView.Items.Add(website.getvi());
+
+        using temporary files for intermediate saves, to prevent loosing data when a file is broken
+
+        creating a hook to the file (lock the instance of the class that hooks the file)
+
+        split into methods
+        -parser
+        -listView.update
+        -save file
+
+        CTRL + K + D   reformate
+        
+        using(...) deals with closing the file (garbage collector)
+
+        try {
+        } catch() {
+        } catch() {
+        } finally() {        
+        }
+
+        create an array of threads
+        

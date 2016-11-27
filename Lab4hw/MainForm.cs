@@ -148,7 +148,6 @@ namespace Lab4hw
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
             }
-            //statusLabel.Text = "Done with xml!";
         }
 
     }
