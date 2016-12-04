@@ -8,10 +8,12 @@ namespace Lab4hw.classes
 {
     public class WordCounter
     {
-        private String url;
-        private String word;
-        private int findings;
-        private String duration;
+        #region public members
+        public String url;
+        public String word;
+        public int findings;
+        public String duration;
+        #endregion
 
         #region getters setters
         public String Url { get { return this.url; } set { url = value; } }

@@ -5,13 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace Lab4hw.classes
 {
     public class XmlFile
     {
         private static String fileName = @"urls.xml";
+        private static String fileName2 = @"urls2.xml";
         private Object obj = (Object)fileName;
+        private Object obj2 = (Object)fileName2;
 
         #region getters setters
         public Object Obj { get; set; }
@@ -54,7 +57,7 @@ namespace Lab4hw.classes
 
         public void WriteXml(WordCounter wc)
         {
-            System.Threading.Monitor.Enter(obj);
+            
             try
             {
                 String fileName = (String)obj;
@@ -78,6 +81,22 @@ namespace Lab4hw.classes
                 System.Threading.Monitor.Exit(obj);
             }
 
+        }
+
+        public void SerializeXml(WordCounter wc)
+        {
+            System.Threading.Monitor.Enter(obj2);
+            try
+            {
+                String filename2 = (String)obj2;
+                XmlSerializer serializer = new XmlSerializer(typeof(WordCounter));
+                TextWriter writer = new StreamWriter(fileName);
+                serializer.Serialize(writer, wc);
+            }
+            finally
+            {
+                System.Threading.Monitor.Exit(obj2);
+            }
         }
     }
 }

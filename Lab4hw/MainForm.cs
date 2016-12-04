@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace Lab4hw
 {
@@ -105,6 +106,7 @@ namespace Lab4hw
 
             WriteProgressBar("Done!");
             xmlFile.UpdateXml(wcList);
+
         }
 
         private void CreateWordCounterList()
@@ -133,6 +135,8 @@ namespace Lab4hw
             progressBar1.PerformStep();
             WriteProgressBar("Done with " + wordCounter.Url + "!");
             websitesDataGridView.Refresh();
+            
+
         }
 
         public delegate WordCounter MyDelegate(WordCounter wc);
@@ -148,11 +152,12 @@ namespace Lab4hw
                 ts.Milliseconds);
             wc.Duration = elapsedTime;
 
+            //xmlFile.SerializeXml(wc);
             UpdateProgressBar(wc);
             return wc;
         }
         #endregion
-        
+
 
     }
 }
