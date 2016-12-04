@@ -33,7 +33,6 @@
             this.stopButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.websitesDataGridView = new System.Windows.Forms.DataGridView();
-            this.statusLabel = new System.Windows.Forms.Label();
             this.addWebButton = new System.Windows.Forms.Button();
             this.webTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.websitesDataGridView)).BeginInit();
@@ -88,18 +87,8 @@
             this.websitesDataGridView.Location = new System.Drawing.Point(18, 125);
             this.websitesDataGridView.Name = "websitesDataGridView";
             this.websitesDataGridView.RowTemplate.Height = 28;
-            this.websitesDataGridView.Size = new System.Drawing.Size(723, 421);
+            this.websitesDataGridView.Size = new System.Drawing.Size(723, 470);
             this.websitesDataGridView.TabIndex = 4;
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Location = new System.Drawing.Point(12, 570);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(56, 20);
-            this.statusLabel.TabIndex = 5;
-            this.statusLabel.Text = "Status";
             // 
             // addWebButton
             // 
@@ -130,7 +119,6 @@
             this.ClientSize = new System.Drawing.Size(778, 644);
             this.Controls.Add(this.webTextBox);
             this.Controls.Add(this.addWebButton);
-            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.websitesDataGridView);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.stopButton);
@@ -152,7 +140,6 @@
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.DataGridView websitesDataGridView;
-        private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Button addWebButton;
         private System.Windows.Forms.TextBox webTextBox;
     }

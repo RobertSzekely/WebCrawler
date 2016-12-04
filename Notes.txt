@@ -3,7 +3,8 @@
         use @ for static text (filepath) and store it in a constant
 
         public readonly string address = @"\path"; (rootpath)
-        public string newAddress = Path.Combine(address, "output.xml")
+        
+	public string newAddress = Path.Combine(address, "output.xml")
                                 Path.Combine - safely concatenating paths
         
         if (File.Exists(newAddress)) 
