@@ -20,6 +20,7 @@ namespace Lab4hw
         private BindingSource bs = new BindingSource();
         private int threadNo = 0;
         private XmlFile xmlFile;
+        private Object thisLock = new Object();
 
         public MainForm()
         {
@@ -105,7 +106,7 @@ namespace Lab4hw
 
 
             WriteProgressBar("Done!");
-            xmlFile.UpdateXml(wcList);
+            //xmlFile.UpdateXml(wcList);
 
         }
 
@@ -151,8 +152,7 @@ namespace Lab4hw
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds);
             wc.Duration = elapsedTime;
-
-            //xmlFile.SerializeXml(wc);
+            xmlFile.SerializeObjectXml(wc);
             UpdateProgressBar(wc);
             return wc;
         }

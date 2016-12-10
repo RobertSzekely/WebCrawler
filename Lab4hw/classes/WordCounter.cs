@@ -49,7 +49,7 @@ namespace Lab4hw.classes
                 while ((line = reader.ReadLine()) != null)
                 {
                     GetWordsNo(this.Word, line);
-                    xmlFile.WriteXml(this);
+                    //xmlFile.WriteXml(this);
                 }
             }
         }

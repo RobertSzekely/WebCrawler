@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
@@ -15,7 +16,8 @@ namespace Lab4hw.classes
         private static String fileName2 = @"urls2.xml";
         private Object obj = (Object)fileName;
         private Object obj2 = (Object)fileName2;
-
+        private Object thisLock = new Object();
+        private ReaderWriterLockSlim lock_ = new ReaderWriterLockSlim();
         #region getters setters
         public Object Obj { get; set; }
         public String FileName { get; }
@@ -57,7 +59,7 @@ namespace Lab4hw.classes
 
         public void WriteXml(WordCounter wc)
         {
-            
+
             try
             {
                 String fileName = (String)obj;
@@ -83,20 +85,23 @@ namespace Lab4hw.classes
 
         }
 
-        public void SerializeXml(WordCounter wc)
+        public void SerializeObjectXml(WordCounter wc)
         {
-            System.Threading.Monitor.Enter(obj2);
+            lock_.EnterWriteLock();
             try
             {
                 String filename2 = (String)obj2;
                 XmlSerializer serializer = new XmlSerializer(typeof(WordCounter));
-                TextWriter writer = new StreamWriter(fileName);
+                TextWriter writer = new StreamWriter(fileName2);
                 serializer.Serialize(writer, wc);
+                writer.Close();
             }
             finally
             {
-                System.Threading.Monitor.Exit(obj2);
+                lock_.ExitWriteLock();
             }
+
+
         }
     }
 }
