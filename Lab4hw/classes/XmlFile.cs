@@ -103,5 +103,21 @@ namespace Lab4hw.classes
 
 
         }
+        public void SerializeListXml(List<WordCounter> wcList)
+        {
+            lock_.EnterWriteLock();
+            try
+            {
+                String filename2 = (String)obj2;
+                XmlSerializer serializer = new XmlSerializer(typeof(List<WordCounter>));
+                TextWriter writer = new StreamWriter(fileName2);
+                serializer.Serialize(writer, wcList);
+                writer.Close();
+            }
+            finally
+            {
+                lock_.ExitWriteLock();
+            }
+        }
     }
 }

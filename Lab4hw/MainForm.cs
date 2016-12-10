@@ -37,7 +37,7 @@ namespace Lab4hw
             bs.DataSource = typeof(WordCounter);
             bs.Add(new WordCounter("http://www.google.com"));
             bs.Add(new WordCounter("http://www.facebook.com"));
-            bs.Add(new WordCounter("http://www.emag.ro"));
+            //bs.Add(new WordCounter("http://www.emag.ro"));
             bs.Add(new WordCounter("http://www.pcgarage.ro"));
 
             websitesDataGridView.DataSource = bs;
@@ -106,6 +106,7 @@ namespace Lab4hw
 
 
             WriteProgressBar("Done!");
+            xmlFile.SerializeListXml(wcList);
             //xmlFile.UpdateXml(wcList);
 
         }
@@ -152,7 +153,7 @@ namespace Lab4hw
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds);
             wc.Duration = elapsedTime;
-            xmlFile.SerializeObjectXml(wc);
+          //  xmlFile.SerializeObjectXml(wc);
             UpdateProgressBar(wc);
             return wc;
         }
