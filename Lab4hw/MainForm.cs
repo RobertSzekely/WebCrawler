@@ -20,25 +20,30 @@ namespace Lab4hw
         private BindingSource bs = new BindingSource();
         private int threadNo = 0;
         private XmlFile xmlFile;
-        private Object thisLock = new Object();
 
         public MainForm()
         {
             InitializeComponent();
-            InitBindingSource();
             webTextBox.Text = "http://";
-            
-            CreateWordCounterList();
-            xmlFile = new XmlFile(wcList);
+
+            xmlFile = new XmlFile();
+            wcList = xmlFile.DeserializeListXml();
+            InitBindingSource();
         }
 
         private void InitBindingSource()
         {
             bs.DataSource = typeof(WordCounter);
-            bs.Add(new WordCounter("http://www.google.com"));
-            bs.Add(new WordCounter("http://www.facebook.com"));
+
+            //bs.Add(new WordCounter("http://www.google.com"));
+            //bs.Add(new WordCounter("http://www.facebook.com"));
             //bs.Add(new WordCounter("http://www.emag.ro"));
-            bs.Add(new WordCounter("http://www.pcgarage.ro"));
+            //bs.Add(new WordCounter("http://www.pcgarage.ro"));
+
+            for (int i = 0; i < wcList.Count(); ++i)
+            {
+                bs.Add(wcList[i]);
+            }
 
             websitesDataGridView.DataSource = bs;
             websitesDataGridView.AutoGenerateColumns = true;
@@ -59,7 +64,7 @@ namespace Lab4hw
                 HttpWebRequest request = HttpWebRequest.Create(url) as HttpWebRequest;
                 request.Timeout = 5000;
                 HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-                int statusCode = (int) response.StatusCode;
+                int statusCode = (int)response.StatusCode;
 
                 if (statusCode >= 100 && statusCode < 400) //Good requests
                 {
@@ -87,7 +92,7 @@ namespace Lab4hw
             threadNo = bs.List.Count;
 
             SetupProgressBar();
-            
+
             var wcs = new WordCounter[threadNo];
             var dlg = new MyDelegate(Work);
 
@@ -107,17 +112,7 @@ namespace Lab4hw
 
             WriteProgressBar("Done!");
             xmlFile.SerializeListXml(wcList);
-            //xmlFile.UpdateXml(wcList);
 
-        }
-
-        private void CreateWordCounterList()
-        {
-            for (int i = 0; i < bs.List.Count; ++i)
-            {
-                WordCounter wc = (WordCounter)bs.List[i];
-                this.wcList.Add(wc);
-            }
         }
 
         private void SetupProgressBar()
@@ -137,8 +132,6 @@ namespace Lab4hw
             progressBar1.PerformStep();
             WriteProgressBar("Done with " + wordCounter.Url + "!");
             websitesDataGridView.Refresh();
-            
-
         }
 
         public delegate WordCounter MyDelegate(WordCounter wc);
@@ -153,7 +146,7 @@ namespace Lab4hw
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds);
             wc.Duration = elapsedTime;
-          //  xmlFile.SerializeObjectXml(wc);
+
             UpdateProgressBar(wc);
             return wc;
         }

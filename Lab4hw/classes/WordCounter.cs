@@ -33,7 +33,7 @@ namespace Lab4hw.classes
             this.duration = "";
         }
         #endregion
-        
+
         private void GetWordsNo(String word, String text)
         {
             this.findings += new Regex(Regex.Escape(word)).Matches(text).Count;
@@ -49,7 +49,6 @@ namespace Lab4hw.classes
                 while ((line = reader.ReadLine()) != null)
                 {
                     GetWordsNo(this.Word, line);
-                    //xmlFile.WriteXml(this);
                 }
             }
         }

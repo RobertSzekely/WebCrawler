@@ -1,6 +1,6 @@
 
         TODO
-        use @ for static text (filepath) and store it in a constant
+        @ - static string (filepath) and store it in a constant
 
         public readonly string address = @"\path"; (rootpath)
         
